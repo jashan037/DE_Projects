@@ -8,6 +8,84 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Kumar+One&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .featured-section {
+            width: 100%;
+            margin: 0 0 2rem 0;
+            padding: 2rem 0;
+            background-color: #0052cc;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-projects {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .featured-card {
+            background-color: #0052cc;
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .featured-card h3 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .featured-card p {
+            margin-bottom: 2rem;
+        }
+        
+        .view-project-btn {
+            display: inline-block;
+            background-color: white;
+            color: #0052cc;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+        
+        .view-project-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .made-by {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .made-by p {
+            margin-bottom: 0.25rem;
+        }
+        
+        @media (min-width: 768px) {
+            .featured-projects {
+                grid-template-columns: repeat(3, 1fr);
+                padding: 0 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header id="main-header">
@@ -15,6 +93,41 @@
     </header>
     
     <main>
+        <!-- New Featured Section -->
+        <section class="featured-section">
+            <div class="featured-projects">
+                <div class="featured-card">
+                    <h3>LogicLab</h3>
+                    <div class="made-by">
+                        <p>made by</p>
+                        <p>Karanveer Singh Bhangal – 2410992783</p>
+                        <p>Kartik Sharma – 2410992785</p>
+                    </div>
+                    <a href="https://digilogics.netlify.app/" class="view-project-btn" target="_blank">View Project</a>
+                </div>
+                
+                <div class="featured-card">
+                    <h3>Binary Calculator</h3>
+                    <div class="made-by">
+                        <p>made by</p>
+                        <p>Jashanpreet Singh – 2410992770</p>
+                        <p>Kanika – 2410992779</p>
+                    </div>
+                    <a href="https://jashan037.github.io/DE-Project/" class="view-project-btn" target="_blank">View Project</a>
+                </div>
+                
+                <div class="featured-card">
+                    <h3>Universal NAND</h3>
+                    <div class="made-by">
+                        <p>made by</p>
+                        <p>Harmanpreet Kaur – 2410992750</p>
+                        <p>Jasmine Kaur – 2410992773</p>
+                    </div>
+                    <a href="https://harman177.github.io/Universal-NAND-Gate/" class="view-project-btn" target="_blank">View Project</a>
+                </div>
+            </div>
+        </section>
+        
         <section class="project-category">
             <h2>Logic Gates Verification</h2>
             <div class="projects">
