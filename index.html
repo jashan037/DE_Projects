@@ -19,26 +19,32 @@
         }
         
         .featured-projects {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
+            display: flex;
+            overflow-x: auto;
             gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 0 1rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .featured-projects::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
         }
         
         .featured-card {
+            flex: 0 0 280px;
+            min-width: 280px;
             background-color: #0052cc;
             color: white;
             padding: 2rem;
             border-radius: 12px;
             display: flex;
             flex-direction: column;
-            height: 100%;
-            min-height: 300px;
+            height: 300px;
             position: relative;
             overflow: hidden;
             z-index: 1;
+            margin-bottom: 0.5rem;
         }
         
         .featured-card h3 {
@@ -81,8 +87,12 @@
         
         @media (min-width: 768px) {
             .featured-projects {
-                grid-template-columns: repeat(3, 1fr);
                 padding: 0 2rem;
+            }
+            
+            .featured-card {
+                flex: 0 0 330px;
+                min-width: 330px;
             }
         }
     </style>
