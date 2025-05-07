@@ -13,7 +13,7 @@
             width: 100%;
             margin: 0 0 2rem 0;
             padding: 2rem 0;
-            background-color: #0052cc;
+            background-color: #f8f9fa;
             position: relative;
             overflow: hidden;
         }
@@ -21,10 +21,12 @@
         .featured-projects {
             display: flex;
             overflow-x: auto;
-            gap: 1.5rem;
+            gap: 1rem;
             padding: 0 1rem;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none; /* Firefox */
+            max-width: 100%;
+            margin: 0 auto;
         }
         
         .featured-projects::-webkit-scrollbar {
@@ -32,15 +34,16 @@
         }
         
         .featured-card {
-            flex: 0 0 280px;
-            min-width: 280px;
+            flex: 0 0 92%;
+            min-width: 92%;
             background-color: #0052cc;
-            color: white;
-            padding: 2rem;
+            background: linear-gradient(135deg, #1a73e8, #0043a4);
+            color: #fff;
+            padding: 1.8rem;
             border-radius: 12px;
             display: flex;
             flex-direction: column;
-            height: 300px;
+            height: 340px;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -48,26 +51,35 @@
         }
         
         .featured-card h3 {
-            font-size: 1.5rem;
-            color: white;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .featured-card p {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .chip-icon {
+            font-size: 1.5rem;
         }
         
         .view-project-btn {
             display: inline-block;
-            background-color: white;
+            background-color: #fff;
             color: #0052cc;
-            padding: 0.8rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 50px;
             font-weight: 600;
+            font-size: 0.95rem;
             text-decoration: none;
             transition: all 0.3s ease;
             align-self: flex-start;
-            margin-top: auto;
+            margin-top: 4rem;
+            margin-bottom: auto;
         }
         
         .view-project-btn:hover {
@@ -76,23 +88,59 @@
         }
         
         .made-by {
-            margin-top: 1rem;
+            margin-top: auto;
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.8);
         }
         
         .made-by p {
             margin-bottom: 0.25rem;
         }
         
+        .projects {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 1rem;
+            scrollbar-width: none; /* Firefox */
+        }
+        
         @media (min-width: 768px) {
             .featured-projects {
                 padding: 0 2rem;
+                max-width: 1200px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                overflow-x: visible;
             }
             
             .featured-card {
-                flex: 0 0 330px;
-                min-width: 330px;
+                flex: 0 0 31%;
+                min-width: 31%;
+                max-width: none;
+            }
+            
+            .projects {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+                overflow-x: visible;
+            }
+            
+            .project-card {
+                flex: none;
+                min-width: auto;
+                width: 100%;
+                max-width: none;
+            }
+        }
+        
+        @media (max-width: 991px) and (min-width: 768px) {
+            .featured-card {
+                flex: 0 0 48%;
+                min-width: 48%;
             }
         }
     </style>
@@ -107,33 +155,35 @@
         <section class="featured-section">
             <div class="featured-projects">
                 <div class="featured-card">
-                    <h3>LogicLab</h3>
+                    <h3><img src="static/Logiclab.png" alt="LogicLab" style="height: 30px;"></h3>
+                    <a href="https://digilogics.netlify.app/" class="view-project-btn" target="_blank">View Project</a>
                     <div class="made-by">
                         <p>made by</p>
                         <p>Karanveer Singh Bhangal – 2410992783</p>
                         <p>Kartik Sharma – 2410992785</p>
                     </div>
-                    <a href="https://digilogics.netlify.app/" class="view-project-btn" target="_blank">View Project</a>
                 </div>
                 
-                <div class="featured-card">
-                    <h3>Binary Calculator</h3>
+                <div class="featured-card" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                    <h3><img src="static/2bitballte.png" alt="2 Bit Battle" style="height: 40px;"></h3>
+                    <a href="https://harkamalkang22.github.io/DE-project/" class="view-project-btn" style="color: #c0392b;" target="_blank">View Project</a>
                     <div class="made-by">
                         <p>made by</p>
-                        <p>Jashanpreet Singh – 2410992770</p>
-                        <p>Kanika – 2410992779</p>
+                        <p>Harkamal Singh Kang – 2410992746
+                        </p>
+                        <p>Hitesh Dhawan – 2410992760</p>
                     </div>
-                    <a href="https://jashan037.github.io/DE-Project/" class="view-project-btn" target="_blank">View Project</a>
                 </div>
                 
-                <div class="featured-card">
-                    <h3>Universal NAND</h3>
+                <div class="featured-card" style="background: linear-gradient(135deg, #1a237e, #0d47a1);">
+                    <h3><img src="static/SortingAlgorythmVisualizer.png" alt="Sorting Algorithm Visualizer" style="height: 40px;"></h3>
+                    <a href="https://iishita1.github.io/Magnitude-Comparator/" class="view-project-btn" style="color: #0d47a1;" target="_blank">View Project</a>
                     <div class="made-by">
                         <p>made by</p>
-                        <p>Harmanpreet Kaur – 2410992750</p>
-                        <p>Jasmine Kaur – 2410992773</p>
+                        <p>Hitaishi Sehgal – 2410992759
+                            </p>
+                        <p>Ishita Nanda – 2410992763</p>
                     </div>
-                    <a href="https://harman177.github.io/Universal-NAND-Gate/" class="view-project-btn" target="_blank">View Project</a>
                 </div>
             </div>
         </section>
